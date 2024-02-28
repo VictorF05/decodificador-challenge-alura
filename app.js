@@ -4,6 +4,7 @@ const decodeButton = document.querySelector('.input-section__decode-button');
 const resultText = document.querySelector('.output-section__result-text');
 const noContentText = document.querySelector('.output-section__no-content-text');
 const infoText = document.querySelector('.output-section__info-text');
+const copyButton = document.querySelector('.output-section__copy-button');
 
 
 function encode () {
@@ -56,5 +57,16 @@ function validateText (text) {
     }
 }
 
-encodeButton.addEventListener('click', encode)
-decodeButton.addEventListener('click', decode)
+async function copy () {
+    let textoSelecionado = resultText.innerHTML;
+
+    try {
+        await navigator.clipboard.writeText(textoSelecionado);
+    } catch (error) {
+        console.error('Falha ao copiar o texto para área de transferência: ', error.message);
+    }
+}
+
+encodeButton.addEventListener('click', encode);
+decodeButton.addEventListener('click', decode);
+copyButton.addEventListener('click', copy);
