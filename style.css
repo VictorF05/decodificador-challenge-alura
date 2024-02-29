@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
+:root {
+    --main-font: "Inter", sans-serif;
+
+    --bg-color: #D8DFE8;
+    --output-bg-color: #FFFFFF;
+
+    --output-shadow-color: rgba(0, 0, 0, 0.08);
+
+    --main-color: #0A3871;
+    --warning-icon-color: #65747D;
+    --warning-info-text-color: #495057;
+    --no-content-text-color: #343A40;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -8,7 +22,7 @@
 
 body {
     min-height: 100vh;
-    background-color: #D8DFE8;
+    background-color: var(--bg-color);
     display: flex;
 }
 
@@ -33,23 +47,23 @@ main {
     width: 100%;
     height: 100%;
     border: none;
-    background-color: #D8DFE8;
-    color: #0A3871;
-    font-family: "Inter", sans-serif;
+    background-color: var(--bg-color);
+    color: var(--main-color);
+    font-family: var(--main-font);
     font-weight: 400;
     font-size: 2rem;
     resize: none;
 }
 
-.input-section__input:focus {
-    outline: none;
+.input-section__input::placeholder {
+    color: var(--main-color);
+    font-family: var(--main-font)s;
+    font-weight: 400;
+    font-size: 2rem;
 }
 
-.input-section__input::placeholder {
-    color: #0A3871;
-    font-family: "Inter", sans-serif;
-    font-weight: 400;
-    font-size: 2rempx;
+.input-section__input:focus {
+    outline: none;
 }
 
 .input-section > div {
@@ -68,14 +82,14 @@ main {
 .input-section__div-warning > img {
     width: 1rem;
     height: 1rem;
-    color: #65747D;
+    color: var(--warning-icon-color);
 }
 
 .input-section__warning {
-    font-family: "Inter", sans-serif;
+    font-family: var(--main-font);
     font-weight: 400;
     font-size: 1.33rem;
-    color: #495057;
+    color: var(--warning-info-text-color);
 }
 
 .input-section__div-buttons {
@@ -87,41 +101,43 @@ main {
 .input-section__encode-button, 
 .input-section__decode-button {
     width: 48.23%;
-    height: 67px;
-    border-radius: 24px;
-    font-family: "Inter", sans-serif;
+    height: 6.54vh;
+    border-radius: 1.5rem;
+    font-family: var(--main-font);
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .input-section__encode-button {
     border: none;
-    background-color: #0A3871;
-    color: white;
+    background-color: var(--main-color);
+    color: var(--output-bg-color);
 }
 
 .input-section__decode-button {
-    background-color: #D8DFE8;
-    border: 1px solid #0A3871;
-    color: #0A3871;
+    background-color: var(--bg-color);
+    border: 0.06rem solid var(--main-color);
+    color: var(--main-color);
 }
 
 .output-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: white;
+    align-items: center;
+    background-color: var(--output-bg-color);
     width: 27.77vw;
     margin: 3.9vh 2.77vw 3.9vh 0;
     border-radius: 2rem;
-    box-shadow: 0 1.5rempx 2rem -0.5rem rgba(0, 0, 0, 0.08);
+    box-shadow: 0 1.5rem 2rem -0.5rem var(--output-shadow-color);
 }
 
 .output-section > div {
     display: flex;
     flex-direction: column;
-    gap: 2rempx;
+    gap: 2rem;
     align-items: center;
+    width: 84%;
 }
 
 .output-section > div > div {
@@ -129,19 +145,52 @@ main {
     flex-direction: column;
     gap: 1rem;
     text-align: center;
-    width: 70%;
+    width: 75.59%;
+}
+
+.output-section__no-content-image {
+    max-width: 100%;
+    height: auto;
 }
 
 .output-section__no-content-text {
-    font-family: "Inter", sans-serif;
+    font-family: var(--main-font);
     font-weight: 700;
-    font-size: 1.5rempx;
-    color: #343A40;
+    font-size: 1.5rem;
+    color: var(--no-content-text-color);
 }
 
 .output-section__info-text {
-    font-family: "Inter", sans-serif;
+    font-family: var(--main-font);
     font-weight: 400;
     font-size: 1rem;
-    color: #495057;
+    color: var(--warning-info-text-color);
+}
+
+/* .output-section__result-div {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 100%;
+    margin-bottom: 2rem;
+} */
+
+.output-section__result-text {
+    font-family: var(--main-font);
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: var(--warning-info-text-color);
+}
+
+.output-section__copy-button {
+    width: 100%;
+    height: 6.54vh;
+    border: 0.06rem solid var(--main-color);
+    border-radius: 1.5rem;
+    font-family: var(--main-font);
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--main-color);
+    background-color: var(--output-bg-color);
 }

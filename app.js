@@ -2,10 +2,11 @@ const inputText = document.querySelector('.input-section__input');
 const encodeButton = document.querySelector('.input-section__encode-button');
 const decodeButton = document.querySelector('.input-section__decode-button');
 const resultText = document.querySelector('.output-section__result-text');
+const noContentImage = document.querySelector('.output-section__no-content-image');
 const noContentText = document.querySelector('.output-section__no-content-text');
 const infoText = document.querySelector('.output-section__info-text');
 const copyButton = document.querySelector('.output-section__copy-button');
-
+// const divResult = document.querySelector('.output-section__result-div');
 
 function encode () {
     const validText = validateText(inputText.value);
@@ -42,8 +43,11 @@ function decode () {
 function showOnScreen (text) {
     infoText.setAttribute('hidden', true);
     noContentText.setAttribute('hidden', true);
+    noContentImage.setAttribute('hidden', true);
 
     resultText.removeAttribute('hidden');
+    copyButton.removeAttribute('hidden');
+    // divResult.style.display = 'flex';
 
     resultText.innerHTML = text;
 }
