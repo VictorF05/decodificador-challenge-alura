@@ -6,7 +6,7 @@ const noContentImage = document.querySelector('.output-section__no-content-image
 const noContentText = document.querySelector('.output-section__no-content-text');
 const infoText = document.querySelector('.output-section__info-text');
 const copyButton = document.querySelector('.output-section__copy-button');
-// const divResult = document.querySelector('.output-section__result-div');
+const outputMainDiv = document.querySelector('.output-section__main-div');
 
 function encode () {
     const validText = validateText(inputText.value);
@@ -45,9 +45,10 @@ function showOnScreen (text) {
     noContentText.setAttribute('hidden', true);
     noContentImage.setAttribute('hidden', true);
 
+    outputMainDiv.classList.add('output-section__main-div__result');
+
     resultText.removeAttribute('hidden');
     copyButton.removeAttribute('hidden');
-    // divResult.style.display = 'flex';
 
     resultText.innerHTML = text;
 }
