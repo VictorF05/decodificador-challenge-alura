@@ -54,7 +54,7 @@ function showOnScreen (text) {
 }
 
 function validateText (text) {
-    if (/^[a-z]+$/.test(text)) {
+    if (/^[a-z\s]+$/.test(text)) {
         return text;
     } else {
         alert('O texto precisa conter apenas letras minúsculas e sem acentos ou caracteres especiais.')
