@@ -79,13 +79,13 @@ main {
     gap: 0.5rem;
 }
 
-.input-section__div-warning > img {
+.input-section__div-warning__icon {
     width: 1rem;
     height: 1rem;
     color: var(--warning-icon-color);
 }
 
-.input-section__warning {
+.input-section__div-warning__text {
     font-family: var(--main-font);
     font-weight: 400;
     font-size: 0.75rem;
@@ -98,8 +98,8 @@ main {
     justify-content: space-between;
 }
 
-.input-section__encode-button, 
-.input-section__decode-button {
+.input-section__div-buttons__encode-button, 
+.input-section__div-buttons__decode-button {
     width: 48.23%;
     height: 6.54vh;
     border-radius: 1.5rem;
@@ -108,13 +108,13 @@ main {
     font-size: 1rem;
 }
 
-.input-section__encode-button {
+.input-section__div-buttons__encode-button {
     border: none;
     background-color: var(--main-color);
     color: var(--output-bg-color);
 }
 
-.input-section__decode-button {
+.input-section__div-buttons__decode-button {
     background-color: var(--bg-color);
     border: 0.06rem solid var(--main-color);
     color: var(--main-color);
@@ -154,26 +154,26 @@ main {
     width: 75.59%;
 }
 
-.output-section__no-content-image {
+.output-section__main-div__no-content-image {
     max-width: 100%;
     height: auto;
 }
 
-.output-section__no-content-text {
+.output-section__info-div__no-content-text {
     font-family: var(--main-font);
     font-weight: 700;
     font-size: 1.5rem;
     color: var(--no-content-text-color);
 }
 
-.output-section__info-text {
+.output-section__info-div__text {
     font-family: var(--main-font);
     font-weight: 400;
     font-size: 1rem;
     color: var(--warning-info-text-color);
 }
 
-.output-section__result-text {
+.output-section__main-div__result-text {
     font-family: var(--main-font);
     font-weight: 400;
     font-size: 1.5rem;
@@ -181,7 +181,7 @@ main {
     margin-top: 2rem;
 }
 
-.output-section__copy-button {
+.output-section__main-div__copy-button {
     width: 100%;
     height: 6.54vh;
     border: 0.06rem solid var(--main-color);
@@ -205,7 +205,7 @@ main {
         flex-direction: column;
     }
 
-    .output-section__no-content-image {
+    .output-section__main-div__no-content-image {
         display: none;
     }
 
@@ -244,8 +244,8 @@ main {
         gap: 1.5rem;
     }
 
-    .input-section__encode-button, 
-    .input-section__decode-button {
+    .input-section__div-buttons__encode-button, 
+    .input-section__div-buttons__decode-button {
         width: 100%;
     }
 }
