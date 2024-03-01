@@ -3,7 +3,7 @@
 :root {
     --main-font: "Inter", sans-serif;
 
-    --bg-color: #D8DFE8;
+    --bg-color: #F3F5FC;
     --output-bg-color: #FFFFFF;
 
     --output-shadow-color: rgba(0, 0, 0, 0.08);
@@ -26,7 +26,7 @@ body {
     display: flex;
 }
 
-.logo-desktop {
+.logo {
     margin: 2.77vw 0 0 2.77vw;
 }
 
@@ -88,7 +88,7 @@ main {
 .input-section__warning {
     font-family: var(--main-font);
     font-weight: 400;
-    font-size: 1.33rem;
+    font-size: 0.75rem;
     color: var(--warning-info-text-color);
 }
 
@@ -192,4 +192,60 @@ main {
     color: var(--main-color);
     background-color: var(--output-bg-color);
     margin-bottom: 2rem;
+}
+
+/* Layout tablet */
+
+@media (max-width: 1200px) {
+    body {
+        flex-direction: column;
+    }
+
+    main {
+        flex-direction: column;
+    }
+
+    .output-section__no-content-image {
+        display: none;
+    }
+
+    .logo {
+        content: url('./assets/logo-mobile.png');
+        margin: 2rem 0 0 5.20vw;
+    }
+
+    .input-section {
+        margin: 9.88vh 5.20vw 2rem 5.20vw;
+        width: auto;
+        min-height: 50vh;
+    }
+
+
+    .output-section {
+        margin: 0 5.20vw 2.5rem 5.20vw;
+        width: auto;
+        padding: 2rem;
+    }
+
+    .output-section__main-div {
+        width: 90.69%;
+    }
+
+    .output-section__info-div {
+        width: 100%;
+    }
+}
+
+/* layout smartphone */
+
+@media (max-width: 600px) {
+    .input-section__div-buttons {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .input-section__encode-button, 
+    .input-section__decode-button {
+        width: 100%;
+    }
 }
